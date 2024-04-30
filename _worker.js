@@ -929,7 +929,7 @@ const buildWorkerLessConfig = async (env, client) => {
     fakeOutbound.tag = 'fake-outbound';
 
     let fragConfig = structuredClone(xrayConfigTemp);
-    fragConfig.remarks  = '💦 BPB Frag - WorkerLess ⭐'
+    fragConfig.remarks  = 'BPB Frag - WorkerLess ⭐'
     fragConfig.dns.servers[0] = remoteDNS;
     fragConfig.dns.servers.pop();
     fragConfig.outbounds[0].settings.domainStrategy = 'UseIP';
@@ -1008,7 +1008,7 @@ const getFragmentConfigs = async (env, hostName, client) => {
 
         let fragConfig = structuredClone(xrayConfigTemp);
         let outbound = structuredClone(xrayOutboundTemp);
-        let remark = `💦 BPB Frag - ${addr}`;
+        let remark = ` BPB Frag - ${addr}`;
         delete outbound.mux;
         delete outbound.streamSettings.grpcSettings;
         delete outbound.streamSettings.realitySettings;
@@ -1077,7 +1077,7 @@ const getFragmentConfigs = async (env, hostName, client) => {
 
 
     let bestPing = structuredClone(xrayConfigTemp);
-    bestPing.remarks = '💦 BPB Frag - Best Ping 💥';
+    bestPing.remarks = ' BPB Frag - Best Ping 💥';
     bestPing.dns.servers[0] = remoteDNS;
     bestPing.dns.servers[1].address = localDNS;
     bestPing.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
@@ -1542,7 +1542,7 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
 	</head>
 	
 	<body>
-		<h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 💦</h1>
+		<h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> </h1>
 		<div class="form-container">
             <h2>FRAGMENT SETTINGS ⚙️</h2>
 			<form id="configForm">
@@ -2085,7 +2085,7 @@ const renderLoginPage = async () => {
     </head>
     <body>
         <div class="container">
-            <h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 💦</h1>
+            <h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> </h1>
             <div class="form-container">
                 <h2>User Login</h2>
                 <form id="loginForm">
@@ -2156,7 +2156,7 @@ const renderErrorPage = (message, error, refer) => {
 
     <body>
         <div id="error-container">
-            <h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 💦</h1>
+            <h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> </h1>
             <div id="error-message">
                 <h2>${message} ${refer 
                     ? 'Please try again or refer to <a href="https://github.com/bia-pain-bache/BPB-Worker-Panel/blob/main/README.md">documents</a>' 
